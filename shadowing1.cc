@@ -81,31 +81,31 @@ void compute(){
 		for(auto p0 : p0s){
 			for(int N=10; N <= 100000000; N *= 10){
 				REAL d = shadowing_bound<10>(N, a, p0);
-				cout << "10 " << N << " ";
+				cout << "10 " << a <<" "<<p0<<" "<< N << " ";
 				rwrite(d, 25);
 				cout << endl;
 		 		d = shadowing_bound<20>(N, a, p0);
-				cout << "20 " << N << " ";
+				cout << "20 " << a <<" "<<p0<<" "<< N << " ";
 				rwrite(d, 25);
 				cout << endl;
 		 		d = shadowing_bound<30>(N, a, p0);
-				cout << "30 " << N << " ";
+				cout << "30 " << a <<" "<<p0<<" "<< N << " ";
 				rwrite(d, 25);
 				cout << endl;
 		 		d = shadowing_bound<40>(N, a, p0);
-				cout << "40 " << N << " ";
+				cout << "40 " << a <<" "<<p0<<" "<< N << " ";
 				rwrite(d, 25);
 				cout << endl;
 		 		d = shadowing_bound<50>(N, a, p0);
-				cout << "50 " << N << " ";
+				cout << "50 " << a <<" "<<p0<<" "<< N << " ";
 				rwrite(d, 25);
 				cout << endl;
 		 		d = shadowing_bound<60>(N, a, p0);
-				cout << "60 " << N << " ";
+				cout << "60 " << a <<" "<<p0<<" "<< N << " ";
 				rwrite(d, 25);
 				cout << endl;
 		 		d = shadowing_bound<70>(N, a, p0);
-				cout << "70 " << N << " ";
+				cout << "70 " << a <<" "<<p0<<" "<< N << " ";
 				rwrite(d, 25);
 				cout << endl;
 			}
