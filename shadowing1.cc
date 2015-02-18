@@ -65,6 +65,8 @@ REAL shadowing_bound(const int N, const double a, const double p0){
 	for(int i=N-1;i>=0; i--){
 		bool left= (double(orbit[i]) <= 0.5);
 		p = inverse_logistic_map(REAL(a), p, left);
+		if(positive(p-REAL(a)/4, -10))
+			return -1;
 		REAL dist = abs(p-REAL(double(orbit[i])));
 		if(positive(dist-max_dist,-10))
 			max_dist = dist;
@@ -77,35 +79,35 @@ void compute(){
 	//const double p0 = 0.4;
 	vector<double> as = {3.6, 3.635, 3.65, 3.7, 3.75, 3.8, 3.86, 3.91};
 	vector<double> p0s = {0.3, 0.4, 0.5,0.6};
-	for(auto a : as){
-		for(auto p0 : p0s){
-			for(int N=10; N <= 100000000; N *= 10){
+	for(int N=10; N <= 100000000; N *= 10){
+		for(auto a : as){
+			for(auto p0 : p0s){
 				REAL d = shadowing_bound<10>(N, a, p0);
-				cout << "10 " << a <<" "<<p0<<" "<< N << " ";
+				cout << "10 " << N << " " << a <<" "<<p0<<" ";
 				rwrite(d, 25);
 				cout << endl;
 		 		d = shadowing_bound<20>(N, a, p0);
-				cout << "20 " << a <<" "<<p0<<" "<< N << " ";
+				cout << "20 " << N << " " << a <<" "<<p0<<" ";
 				rwrite(d, 25);
 				cout << endl;
 		 		d = shadowing_bound<30>(N, a, p0);
-				cout << "30 " << a <<" "<<p0<<" "<< N << " ";
+				cout << "30 " << N << " " << a <<" "<<p0<<" ";
 				rwrite(d, 25);
 				cout << endl;
 		 		d = shadowing_bound<40>(N, a, p0);
-				cout << "40 " << a <<" "<<p0<<" "<< N << " ";
+				cout << "40 " << N << " " << a <<" "<<p0<<" ";
 				rwrite(d, 25);
 				cout << endl;
 		 		d = shadowing_bound<50>(N, a, p0);
-				cout << "50 " << a <<" "<<p0<<" "<< N << " ";
+				cout << "50 " << N << " " << a <<" "<<p0<<" ";
 				rwrite(d, 25);
 				cout << endl;
 		 		d = shadowing_bound<60>(N, a, p0);
-				cout << "60 " << a <<" "<<p0<<" "<< N << " ";
+				cout << "60 " << N << " " << a <<" "<<p0<<" ";
 				rwrite(d, 25);
 				cout << endl;
 		 		d = shadowing_bound<70>(N, a, p0);
-				cout << "70 " << a <<" "<<p0<<" "<< N << " ";
+				cout << "70 " << N << " " << a <<" "<<p0<<" ";
 				rwrite(d, 25);
 				cout << endl;
 			}
