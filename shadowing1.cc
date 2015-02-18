@@ -77,9 +77,9 @@ REAL shadowing_bound(const int N, const double a, const double p0){
 void compute(){
 	//const double a = 3.8;
 	//const double p0 = 0.4;
-	vector<double> as = {3.6, 3.635, 3.65, 3.7, 3.75, 3.8, 3.86, 3.91};
+	vector<double> as = {3.6, 3.635, 3.7, 3.75, 3.8, 3.86, 3.91};
 	vector<double> p0s = {0.3, 0.4, 0.5,0.6};
-	for(int N=10; N <= 100000000; N *= 10){
+	for(int N=1000; N <= 1000; N *= 10){
 		for(auto a : as){
 			for(auto p0 : p0s){
 				REAL d = shadowing_bound<10>(N, a, p0);
@@ -108,6 +108,10 @@ void compute(){
 				cout << endl;
 		 		d = shadowing_bound<70>(N, a, p0);
 				cout << "70 " << N << " " << a <<" "<<p0<<" ";
+				rwrite(d, 25);
+				cout << endl;
+		 		d = shadowing_bound<80>(N, a, p0);
+				cout << "80 " << N << " " << a <<" "<<p0<<" ";
 				rwrite(d, 25);
 				cout << endl;
 			}
