@@ -68,8 +68,7 @@ REAL shadowing_bound(const int N, const double a, const double p0){
 		if(positive(p-REAL(a)/4, -10))
 			return -1;
 		REAL dist = abs(p-REAL(double(orbit[i])));
-		if(positive(dist-max_dist,-10))
-			max_dist = dist;
+		max_dist = maximum(dist, max_dist);
 	}
 	return max_dist;
 }
